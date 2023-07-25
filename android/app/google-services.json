@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "426320620209",
+    "project_id": "skeleton-21092",
+    "storage_bucket": "skeleton-21092.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:426320620209:android:31936fd2a6e65d38f41090",
+        "android_client_info": {
+          "package_name": "com.intraector.textium"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "426320620209-jbj1kmn40hjnbcg59j41g36an1v0302a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT7p-rqIr2qgElAHNX2AFtJn8sbmJRnAQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "426320620209-jbj1kmn40hjnbcg59j41g36an1v0302a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "426320620209-u3jv65mafd10s3mmtnffs4kaorsb1jft.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.intraector.textium"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
