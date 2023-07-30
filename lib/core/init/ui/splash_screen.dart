@@ -48,9 +48,8 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               Expanded(
                 child: Center(
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.44,
-                    child: const FlutterLogo(),
+                  child: FlutterLogo(
+                    size: MediaQuery.of(context).size.width * 0.44,
                   ),
                 ),
               ),

@@ -69,7 +69,6 @@ class ProjectsRepo extends Bloc<ProjectsEvent, ProjectsState> {
     AddProjects event,
     Emitter<ProjectsState> emit,
   ) async {
-    emit(ProjectsLoading());
     final output = <Project>[
       event.project,
     ];
