@@ -8,7 +8,7 @@ class Block extends Equatable {
     required this.cells,
   });
 
-  factory Block.fromMap(JsonMap map) {
+  factory Block.fromMap(dynamic map) {
     return Block(
       cells: Cells.fromList(map['cells']),
     );

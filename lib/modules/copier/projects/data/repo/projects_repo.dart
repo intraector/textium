@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/_shared/utils/logger.dart';
 import '../../../../../core/l10n/generated/l10n.dart';
+import '../../../../_shared/data/dto/json_map.dart';
 import '../../../../_shared/data/dto/project.dart';
 import '../../../../_shared/utils/file_utils.dart';
 import '../../../_shared/copier_defaults.dart';
@@ -35,14 +38,17 @@ class ProjectsRepo extends Bloc<ProjectsEvent, ProjectsState> {
       }
 
       final files = await FileUtils.readDir(path).toList();
+      final output = <Project>[];
       for (final file in files) {
         final content = await FileUtils.asStringFrom(file.path);
-        print('🏐 content : ${content}');
-
-        emit(
-          ProjectsData(data: []),
+        final JsonMap map = jsonDecode(content);
+        output.add(
+          Project.fromMap(map),
         );
       }
+      emit(
+        ProjectsData(data: output),
+      );
     } catch (e) {
       Log.error(e);
       emit(

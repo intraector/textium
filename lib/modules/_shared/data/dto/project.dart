@@ -13,7 +13,7 @@ class Project extends Equatable {
   factory Project.fromMap(Map<String, dynamic> map) {
     return Project(
       name: map[JsonKey.name],
-      blocks: (map[JsonKey.blocks] as List<JsonMap>).map(Block.fromMap).toList(),
+      blocks: (map[JsonKey.blocks] as List).map<Block>(Block.fromMap).toList(),
     );
   }
 

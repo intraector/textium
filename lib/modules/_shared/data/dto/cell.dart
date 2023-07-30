@@ -8,7 +8,7 @@ class Cell extends Equatable {
     required this.text,
   });
 
-  factory Cell.fromMap(JsonMap map) {
+  factory Cell.fromMap(dynamic map) {
     return Cell(
       text: map[JsonKey.cell],
     );
@@ -34,8 +34,8 @@ class Cell extends Equatable {
 }
 
 abstract class Cells {
-  static List<Cell> fromList(List<JsonMap> map) {
-    return map.map(Cell.fromMap).toList();
+  static List<Cell> fromList(List map) {
+    return map.map<Cell>(Cell.fromMap).toList();
   }
 
   static List<Cell> fromString(String source) {
