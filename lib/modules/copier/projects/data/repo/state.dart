@@ -15,6 +15,14 @@ class ProjectsData extends ProjectsState with EquatableMixin {
 
   @override
   List<Object> get props => [data];
+
+  ProjectsData copyWith({
+    List<Project>? data,
+  }) {
+    return ProjectsData(
+      data: data ?? this.data,
+    );
+  }
 }
 
 class ProjectsError extends ProjectsState {

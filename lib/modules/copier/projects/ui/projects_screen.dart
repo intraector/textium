@@ -36,9 +36,7 @@ class ProjectsScreen extends StatelessWidget {
                 title: Text(item.name),
                 onTap: () {
                   context.router.use.push(
-                    ProjectDetailsScreen(
-                      project: item,
-                    ),
+                    ProjectDetailsScreen(projectId: item.id),
                   );
                 },
               );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/_shared/widgets/divider.dart';
 import '../../../../core/l10n/l10n_helper.dart';
 import '../../../../core/theme/themes/_interface/app_theme.dart';
 
@@ -17,7 +18,6 @@ Future<T?> showAppDialog<T>(
     barrierDismissible: barrierDismissible,
     builder: (_) {
       return Dialog(
-        insetPadding: const EdgeInsets.all(20),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
@@ -30,12 +30,11 @@ Future<T?> showAppDialog<T>(
                   Padding(
                     padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
                     child: Row(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
-                        Expanded(
-                          child: Text(
-                            title,
-                            textAlign: TextAlign.center,
-                          ),
+                        Text(
+                          title,
+                          textAlign: TextAlign.center,
                         ),
                       ],
                     ),
@@ -51,25 +50,22 @@ Future<T?> showAppDialog<T>(
                     ),
                     alignment: Alignment.center,
                     child: Row(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         if (prefixIcon != null)
                           Padding(
                             padding: const EdgeInsets.only(right: 8),
                             child: prefixIcon,
                           ),
-                        Expanded(
-                          child: Text(
-                            content,
-                            style: context.text.s16w400,
-                            textAlign: TextAlign.left,
-                          ),
+                        Text(
+                          content,
+                          style: context.text.s16w400,
+                          textAlign: TextAlign.left,
                         ),
                       ],
                     ),
                   ),
-                const Divider(
-                  height: 1,
-                ),
+                const AppDivider(),
                 if (showCancel)
                   InkWell(
                     onTap: () {

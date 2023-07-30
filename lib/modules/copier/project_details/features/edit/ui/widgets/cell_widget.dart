@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../../../_shared/data/dto/cell.dart';
+import '../../../../../../_shared/data/dto/cell.dart';
 
 class CellWidget extends StatelessWidget {
   const CellWidget({required this.item, super.key});

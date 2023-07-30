@@ -4,4 +4,5 @@ abstract class JsonKey {
   static const String blocks = 'blocks';
   static const String block = 'block';
   static const String name = 'name';
+  static const String id = 'id';
 }

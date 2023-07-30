@@ -186,6 +186,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "pincodeErrorTimeout": m0,
         "profile": MessageLookupByLibrary.simpleMessage("Профиль"),
         "projectName": MessageLookupByLibrary.simpleMessage("Название проекта"),
+        "projectNotFound":
+            MessageLookupByLibrary.simpleMessage("Проект не найден"),
         "projects": MessageLookupByLibrary.simpleMessage("Проекты"),
         "projectsEmpty":
             MessageLookupByLibrary.simpleMessage("Проектов пока нет"),
@@ -197,8 +199,11 @@ class MessageLookup extends MessageLookupByLibrary {
             "Не удалось включить уведомления"),
         "recoverPassword":
             MessageLookupByLibrary.simpleMessage("Восстановить пароль"),
+        "remove": MessageLookupByLibrary.simpleMessage("Удалить"),
         "removeAccount":
             MessageLookupByLibrary.simpleMessage("Удалить аккаунт"),
+        "removeProjectConfirm": MessageLookupByLibrary.simpleMessage(
+            "Удалить проект безвозвратно?"),
         "russian": MessageLookupByLibrary.simpleMessage("Русский"),
         "save": MessageLookupByLibrary.simpleMessage("Сохранить"),
         "search": MessageLookupByLibrary.simpleMessage("Поиск"),

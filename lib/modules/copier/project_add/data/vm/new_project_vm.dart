@@ -40,14 +40,15 @@ class NewProjectVm extends Bloc<NewProjectEvent, NewProjectState> {
     try {
       emit(NewProjectLoading());
       final project = Project.fromString(
-        event.name,
-        event.data,
+        id: StringUtils.randomText(),
+        name: event.name,
+        source: event.data,
       );
       final path = await FileUtils.pathToDocsWith(
         '${CopierDefaults.projectsPath}/'
-        '${StringUtils.randomText()}',
+        '${project.id}'
+        '.${CopierDefaults.projectsExtension}',
       );
-      print('🏐 path : ${path}');
       await FileUtils.saveAsString(
         const JsonEncoder().convert(project.toMap()),
         path,

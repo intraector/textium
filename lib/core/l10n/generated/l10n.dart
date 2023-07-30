@@ -1500,6 +1500,16 @@ class S {
     );
   }
 
+  /// `Проект не найден`
+  String get projectNotFound {
+    return Intl.message(
+      'Проект не найден',
+      name: 'projectNotFound',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Проекты`
   String get projects {
     return Intl.message(
@@ -1525,6 +1535,26 @@ class S {
     return Intl.message(
       'Название проекта',
       name: 'projectName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Удалить`
+  String get remove {
+    return Intl.message(
+      'Удалить',
+      name: 'remove',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Удалить проект безвозвратно?`
+  String get removeProjectConfirm {
+    return Intl.message(
+      'Удалить проект безвозвратно?',
+      name: 'removeProjectConfirm',
       desc: '',
       args: [],
     );

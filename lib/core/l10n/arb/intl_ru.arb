@@ -148,7 +148,10 @@
 	"addProject": "Добавить проект",
 	"enterText": "Введите текст",
 	"paste": "Вставить",
+	"projectNotFound": "Проект не найден",
 	"projects": "Проекты",
 	"projectsEmpty": "Проектов пока нет",
-	"projectName": "Название проекта"
+	"projectName": "Название проекта",
+	"remove": "Удалить",
+	"removeProjectConfirm": "Удалить проект безвозвратно?"
 }
