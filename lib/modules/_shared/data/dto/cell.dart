@@ -14,6 +14,19 @@ class Cell extends Equatable {
     );
   }
 
+  factory Cell.fromString(String source) {
+    final map = {
+      JsonKey.cell: source,
+    };
+    return Cell.fromMap(map);
+  }
+
+  JsonMap toMap() {
+    return {
+      JsonKey.cell: text,
+    };
+  }
+
   final String text;
 
   @override
@@ -23,5 +36,13 @@ class Cell extends Equatable {
 abstract class Cells {
   static List<Cell> fromList(List<JsonMap> map) {
     return map.map(Cell.fromMap).toList();
+  }
+
+  static List<Cell> fromString(String source) {
+    return source.split(' ').map(Cell.fromString).toList();
+  }
+
+  static List<JsonMap> toMaps(List<Cell> cells) {
+    return cells.map((e) => e.toMap()).toList();
   }
 }

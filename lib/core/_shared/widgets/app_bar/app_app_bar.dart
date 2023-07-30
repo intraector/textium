@@ -44,7 +44,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
       } else {
         title = Text(
           this.title!,
-          style: context.text.h16w700,
+          style: context.text.s16w600,
         );
       }
     }

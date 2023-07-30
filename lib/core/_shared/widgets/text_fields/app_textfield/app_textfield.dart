@@ -22,7 +22,7 @@ class AppTextfield extends StatefulWidget {
   static List<String> defaultValidator(String? value) {
     final output = <String>[];
     if (value?.isEmpty ?? true) {
-      output.add(S.current.checkData);
+      output.add(S.current.inputErrorGeneral);
       return output;
     }
     return output;
@@ -126,6 +126,7 @@ class AppTextfieldState extends State<AppTextfield> {
                   color: context.color.grey700,
                 ),
             hintText: vm.hintText,
+            // alignLabelWithHint: ,
             counterText: '',
             disabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),

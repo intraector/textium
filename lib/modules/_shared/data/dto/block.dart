@@ -13,17 +13,20 @@ class Block extends Equatable {
       cells: Cells.fromList(map['cells']),
     );
   }
+  factory Block.fromString(String source) {
+    return Block(
+      cells: Cells.fromString(source),
+    );
+  }
+
+  JsonMap toMap() {
+    return {
+      'cells': Cells.toMaps(cells),
+    };
+  }
 
   final List<Cell> cells;
 
   @override
   List<Object> get props => [cells];
-
-  Block copyWith({
-    List<Cell>? cells,
-  }) {
-    return Block(
-      cells: cells ?? this.cells,
-    );
-  }
 }

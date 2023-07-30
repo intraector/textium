@@ -49,7 +49,7 @@ class AppErrorWidget extends StatelessWidget {
           if (content == null)
             Text(
               message ?? context.s.somethingWentWrong,
-              style: context.text.h20w700,
+              style: context.text.s16w400,
               textAlign: TextAlign.center,
             ),
           if (content == null && subMessage != null)
@@ -64,18 +64,22 @@ class AppErrorWidget extends StatelessWidget {
               ),
             ),
           if (onRetry != null)
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                vertical: 16,
-              ),
-              child: ElevatedButton(
-                style: context.button.text4,
-                onPressed: onRetry,
-                child: Text(
-                  buttonLabel ?? context.s.tryAgain,
-                  textAlign: TextAlign.center,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 16,
+                  ),
+                  child: TextButton(
+                    onPressed: onRetry,
+                    child: Text(
+                      buttonLabel ?? context.s.tryAgain,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
         ],
       ),

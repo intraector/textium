@@ -3,9 +3,11 @@ import 'dart:async';
 import '../../../core/init/core_di.dart';
 import '../../../core/settings/data/repo/core_settings_repo.dart';
 import '../../../core/settings/data/repo/utils/mapper.dart';
+import '../projects/data/repo/projects_repo.dart';
 import '../theme/themes/light/copier_light_theme.dart';
+import 'copier_di.dart';
 
-class EmobiOrchestrator {
+class CopierOrchestrator {
   CoreSettingsRepoMapper? _coreSettings;
 
   void init() {
@@ -26,7 +28,9 @@ class EmobiOrchestrator {
     _coreSettings?.dispose();
   }
 
-  Future<void> _loadData() async {}
-
-  //void _initUserData() {}
+  Future<void> _loadData() async {
+    CopierDi.get<ProjectsRepo>().add(
+      ReadProjects(),
+    );
+  }
 }

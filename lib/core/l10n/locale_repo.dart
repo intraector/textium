@@ -5,13 +5,15 @@ import '../_shared/constants/app_defaults.dart';
 import 'generated/l10n.dart';
 
 class LocaleRepo {
-  LocaleRepo() {
-    Intl.defaultLocale = AppDefaults.locale.code;
+  LocaleRepo();
+
+  Future init() async {
     locale = ValueNotifier<Locale>(
       _localeFrom(
         Intl.getCurrentLocale(),
       )!,
     );
+    await apply(AppDefaults.locale.code);
   }
 
   late ValueNotifier<Locale> locale;

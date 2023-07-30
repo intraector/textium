@@ -1,7 +1,3 @@
-import 'package:firebase_core/firebase_core.dart';
-
-import '../firebase_token/repo/fb_token_repo.dart';
-import '../firebase_token/repo/utils/mapper.dart';
 import '../l10n/locale_repo.dart';
 import '../settings/data/repo/core_settings_repo.dart';
 import '../settings/data/repo/utils/mapper.dart';
@@ -24,35 +20,7 @@ class CoreOrchestrator {
       },
       onPushEnabledChange: (isEnabled) {
         if (isEnabled) {
-          CoreDi.get<FbTokenRepo>().switchOn();
-        } else {
-          CoreDi.get<FbTokenRepo>().switchOff();
-        }
-      },
-    );
-
-    FbTokenRepoMapper(
-      repo: CoreDi.get(),
-      onSwitch: (isEnabled) {
-        CoreDi.get<CoreSettingsRepo>().apply(
-          CoreSettings(
-            isPushEnabled: isEnabled,
-            silent: true,
-          ),
-        );
-      },
-      onError: (error) {
-        //on error change core setting to previous state
-        final triedToSwitchTo = switch (error.type) {
-          FbTokenErrorType.on => true,
-          FbTokenErrorType.off => false,
-        };
-        CoreDi.get<CoreSettingsRepo>().apply(
-          CoreSettings(
-            isPushEnabled: !triedToSwitchTo,
-            silent: true,
-          ),
-        );
+        } else {}
       },
     );
 
@@ -60,7 +28,7 @@ class CoreOrchestrator {
   }
 
   static Future<void> _start() async {
-    await Firebase.initializeApp();
+    // await Firebase.initializeApp();
     CoreDi.get<CoreSettingsRepo>().read();
   }
 }

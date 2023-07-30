@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/widgets.dart';
 
 import '../copier_di.dart';
-import '../emobi_orchestrator.dart';
+import '../copier_orchestrator.dart';
 
 class CopierModule extends StatefulWidget {
   const CopierModule({required this.child, super.key});
@@ -16,7 +16,7 @@ class CopierModule extends StatefulWidget {
 
 class _CopierModuleState extends State<CopierModule> {
   final completer = Completer<bool>();
-  late final orchestrator = EmobiOrchestrator();
+  late final orchestrator = CopierOrchestrator();
 
   @override
   void dispose() {

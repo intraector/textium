@@ -1,5 +1,7 @@
 // ignore_for_file: unnecessary_raw_strings
 
+import 'dart:math';
+
 extension StringUtils on String? {
   String? get extractDigits {
     if (this == null) return null;
@@ -189,5 +191,18 @@ extension StringUtils on String? {
     final tempDate = chunks.join('-');
     final output = DateTime.tryParse(tempDate);
     return output;
+  }
+
+  static String randomText([int length = 10]) {
+    const chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
+    final rnd = Random();
+    return String.fromCharCodes(
+      Iterable.generate(
+        length,
+        (_) => chars.codeUnitAt(
+          rnd.nextInt(chars.length),
+        ),
+      ),
+    );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../core/l10n/l10n_helper.dart';
 import '../../../../../core/theme/themes/_interface/app_theme.dart';
 import '../../../../_shared/data/dto/project.dart';
 import '../../../../_shared/widgets/app_error_widget.dart';
@@ -26,11 +27,15 @@ class ProjectsBuilder extends StatelessWidget {
             ),
           final ProjectsError state => AppErrorWidget(
               message: state.message,
-              onRetry: () {},
+              onRetry: () {
+                CopierDi.get<ProjectsRepo>().add(
+                  ReadProjects(),
+                );
+              },
             ),
           final ProjectsData state when state.data.isEmpty => Center(
               child: Text(
-                'No projects yet',
+                context.s.projectsEmpty,
                 style: context.text.s16w400,
               ),
             ),

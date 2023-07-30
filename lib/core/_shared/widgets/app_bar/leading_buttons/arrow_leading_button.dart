@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../l10n/l10n_helper.dart';
 import '../../../../theme/themes/_interface/app_theme.dart';
 
 class ArrowLeadingButton extends StatelessWidget {
@@ -11,10 +10,7 @@ class ArrowLeadingButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: Semantics(
-        label: context.s.comeBack,
-        child: const Icon(Icons.chevron_left),
-      ),
+      icon: const Icon(Icons.chevron_left_rounded),
       color: context.color.textPrimary,
       tooltip: MaterialLocalizations.of(context).backButtonTooltip,
       onPressed: () {
