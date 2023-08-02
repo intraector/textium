@@ -5,8 +5,9 @@ import '../../../../../core/theme/themes/_interface/i_colors.dart';
 
 class ThemeColors extends Equatable implements IColors {
   const ThemeColors({
-    this.background = const Color(0xFFFFFFFF),
-    this.textPrimary = const Color(0xFF212429),
+    this.background = const Color(0xFF000000),
+    //dark
+    this.textPrimary = const Color(0xFFFFFFFF),
     this.error = const Color(0xFFED5A3A),
     this.errorBg = const Color(0xFFFDEBE7),
     this.success = const Color(0xFF49B66E),
@@ -16,9 +17,13 @@ class ThemeColors extends Equatable implements IColors {
     this.grey300 = const Color(0xFFD8DADD),
     this.grey100 = const Color(0xFFF4F4F5),
     this.link = const Color(0xFF3E66CE),
-    this.accent = const Color.fromARGB(255, 167, 135, 251),
+    //primary
+    this.accent = const Color.fromARGB(255, 201, 146, 222),
+    //blackShadow
     this.shadow = const Color(0xff000000),
-    this.shadow2 = const Color(0xff000000),
+    //buttonShadow1
+    this.shadow2 = const Color(0x66CB8665),
+    //primaryBg
     this.accentBg = const Color.fromRGBO(255, 140, 28, 0.12),
   });
 

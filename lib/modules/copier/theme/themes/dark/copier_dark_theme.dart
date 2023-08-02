@@ -1,26 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../_interface/app_theme.dart';
+import '../../../../../core/theme/themes/_interface/app_theme.dart';
 import 'theme_button_styles.dart';
 import 'theme_colors.dart';
 import 'theme_text_styles.dart';
 
-class CoreDefaultTheme implements AppTheme {
+class CopierDarkTheme implements AppTheme {
   @override
   late final data = ThemeData(
     brightness: Brightness.dark,
-    fontFamily: 'Montserrat',
-    useMaterial3: false,
+    useMaterial3: true,
     primaryColor: _color.accent,
     colorScheme: ColorScheme.fromSeed(
+      brightness: Brightness.dark,
       seedColor: _color.accent,
       error: _color.error,
     ),
     hintColor: _color.grey700,
-    canvasColor: _color.background,
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: _button.elevated1,
+    ),
     textButtonTheme: TextButtonThemeData(
       style: _button.text1,
+    ),
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: _button.outline1,
     ),
     textTheme: TextTheme(
       bodyLarge: _text.s14w400,
@@ -51,8 +56,8 @@ class CoreDefaultTheme implements AppTheme {
   late final _text = ThemeTextStyles(_color);
 
   @override
-  String get id => 'CoreDefaultTheme';
+  String get id => 'CopierDarkTheme';
 
   @override
-  String get name => 'Core Default';
+  String get name => 'Copier Dark';
 }

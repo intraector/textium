@@ -4,7 +4,7 @@ import '../../../core/init/core_di.dart';
 import '../../../core/settings/data/repo/core_settings_repo.dart';
 import '../../../core/settings/data/repo/utils/mapper.dart';
 import '../projects/data/repo/projects_repo.dart';
-import '../theme/themes/light/copier_light_theme.dart';
+import '../theme/themes/dark/copier_dark_theme.dart';
 import 'copier_di.dart';
 
 class CopierOrchestrator {
@@ -18,7 +18,7 @@ class CopierOrchestrator {
     );
 
     CoreDi.get<CoreSettingsRepo>().apply(
-      CoreSettings(themeId: CopierLightTheme().id),
+      CoreSettings(themeId: CopierDarkTheme().id),
     );
 
     _loadData();
